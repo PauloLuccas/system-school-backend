@@ -37,6 +37,12 @@ public class Organization {
     @Column(nullable = true)
     private Long cnpj;
 
+    @Column(nullable = true)
+    private String email;
+
+    @Column(nullable = true)
+    private String password;
+
     @OneToMany
     @JoinColumn(name = "orgId")
     private List<User> user;

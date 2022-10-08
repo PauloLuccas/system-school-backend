@@ -41,6 +41,12 @@ public class User {
 
     private Long classes;
 
+    @Column(nullable = true)
+    private String email;
+
+    @Column(nullable = true)
+    private String password;
+
     @OneToOne
     @JoinColumn(name = "roles_id", referencedColumnName = "id")
     private Role role;
