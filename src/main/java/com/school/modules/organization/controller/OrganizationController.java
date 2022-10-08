@@ -16,11 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/api/organizations")
 public class OrganizationController {
     
-    // private final OrganizationRepository organizationRepository;
-
-    // public OrganizationController(OrganizationRepository organizationRepository) {
-    //     this.organizationRepository = organizationRepository;
-    // }
     private final ListOrganizationService listOrganizationService;
 
     public OrganizationController(ListOrganizationService listOrganizationService) {
