@@ -6,12 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.school.modules.organization.model.Organization;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -47,15 +42,10 @@ public class User {
     @Column(nullable = true)
     private String password;
 
-    @OneToOne
-    @JoinColumn(name = "roles_id", referencedColumnName = "id")
-    private Role role;
+    private String role;
 
-    @OneToOne
-    @JoinColumn(name = "classes_id", referencedColumnName = "id")
-    private Classes classe;
+    private String classe;
 
-    @ManyToOne
-    @JoinColumn(name = "orgId")
-    private Organization organization;
+    @Column(name = "org_id")
+    private Long orgId;
 }

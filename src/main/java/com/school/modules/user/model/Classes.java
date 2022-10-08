@@ -26,9 +26,5 @@ public class Classes {
     private UUID id;
 
     @Column(unique = true, nullable = false)
-    private Long classesId;
-
-    public Classes(UUID id) {
-        this.id = id;
-    }
+    private Long classNumber;
 }

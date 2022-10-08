@@ -25,8 +25,4 @@ public class Role {
     private UUID id;
 
     private String name;
-
-    public Role(UUID id) {
-        this.id = id;
-    }
 }
