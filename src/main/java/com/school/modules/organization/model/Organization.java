@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "organization")
 public class Organization {
 
     @Id
@@ -24,10 +26,10 @@ public class Organization {
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = true)
+    @Column(unique = true, nullable = true)
     private Long cnpj;
 
-    @Column(nullable = true)
+    @Column(unique = true, nullable = true)
     private String email;
 
     @Column(nullable = true)
