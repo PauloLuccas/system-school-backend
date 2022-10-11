@@ -29,7 +29,7 @@ public class Organization {
     private String nome;
 
     @Column(unique = true, nullable = true)
-    private Long cnpj;
+    private String cnpj;
 
     @Column(unique = true, nullable = true)
     private String email;
