@@ -12,4 +12,5 @@ public interface OrganizationRepository extends JpaRepository<Organization, UUID
     
     Organization findByCnpj(Long cnpj);
 
+    Organization findByOrgId(Long orgId);
 }

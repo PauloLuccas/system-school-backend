@@ -6,7 +6,6 @@ import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -23,9 +22,9 @@ import lombok.Setter;
 public class Organization {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     @Column(updatable = false, unique = true)
-    private UUID orgId;
+    private Long orgId;
 
     @Column(nullable = false)
     private String nome;
