@@ -7,7 +7,6 @@ import com.school.modules.organization.model.Organization;
 import com.school.modules.organization.services.OrganizationService;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,6 @@
 package com.school.modules.organization.model;
 
 import java.sql.Timestamp;
-import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
