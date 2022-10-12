@@ -10,6 +10,7 @@ import com.school.modules.organization.model.Organization;
 @Repository
 public interface OrganizationRepository extends JpaRepository<Organization, UUID> {
     
-    Organization findByCnpj(Long cnpj);
+    Organization findByCnpj(String cnpj);
 
+    Organization findByOrgId(Long orgId);
 }

@@ -1,13 +1,16 @@
 package com.school.modules.organization.model;
 
-import java.util.UUID;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,19 +22,29 @@ import lombok.Setter;
 public class Organization {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(unique = true)
-    private UUID orgId;
+    @GeneratedValue
+    @Column(updatable = false, unique = true)
+    private Long orgId;
 
-    @Column(nullable = false)
+    @NotEmpty(message = "O campo Nome é obrigatório!")
     private String nome;
 
-    @Column(unique = true, nullable = true)
-    private Long cnpj;
+    @NotEmpty(message = "O campo CNPJ é obrigatório!")
+    private String cnpj;
 
-    @Column(unique = true, nullable = true)
+    @NotEmpty(message = "O campo E-mail é obrigatório!")
     private String email;
 
-    @Column(nullable = true)
+    @NotEmpty(message = "O campo Senha é obrigatório!")
     private String password;
+
+    @Column(columnDefinition = "mediumtext")
+    private String picture;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    Timestamp createdAt;
+
+    @UpdateTimestamp
+    Timestamp updatedAt;
 }
