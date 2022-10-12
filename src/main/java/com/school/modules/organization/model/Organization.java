@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -25,16 +26,16 @@ public class Organization {
     @Column(updatable = false, unique = true)
     private Long orgId;
 
-    @Column(nullable = false)
+    @NotEmpty(message = "O campo Nome é obrigatório!")
     private String nome;
 
-    @Column(unique = true, nullable = true)
+    @NotEmpty(message = "O campo CNPJ é obrigatório!")
     private String cnpj;
 
-    @Column(unique = true, nullable = true)
+    @NotEmpty(message = "O campo E-mail é obrigatório!")
     private String email;
 
-    @Column(nullable = true)
+    @NotEmpty(message = "O campo Senha é obrigatório!")
     private String password;
 
     @CreationTimestamp
