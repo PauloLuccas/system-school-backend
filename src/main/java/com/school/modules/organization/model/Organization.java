@@ -38,6 +38,9 @@ public class Organization {
     @NotEmpty(message = "O campo Senha é obrigatório!")
     private String password;
 
+    @Column(columnDefinition = "mediumtext")
+    private String picture;
+
     @CreationTimestamp
     @Column(updatable = false)
     Timestamp createdAt;
