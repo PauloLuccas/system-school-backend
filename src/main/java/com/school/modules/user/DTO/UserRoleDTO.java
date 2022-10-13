@@ -1,4 +1,4 @@
-package com.school.modules.user.DTO;
+package com.school.modules.user.dto;
 
 import java.util.List;
 import java.util.UUID;
