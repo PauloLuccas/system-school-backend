@@ -1,12 +1,16 @@
 package com.school.modules.user.model;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Any;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -48,4 +52,7 @@ public class User {
 
     @Column(name = "org_id")
     private Long orgId;
+
+    @OneToMany
+    private List<Role> roles;
 }
