@@ -9,12 +9,22 @@ import com.school.modules.user.model.Role;
 import com.school.modules.user.repository.RoleRepository;
 
 @Service
-public class ListRoleService {
+public class RoleService {
     
     @Autowired
     RoleRepository roleRepository;
 
     public List<Role> listAll() {
         return roleRepository.findAll();
+    }
+
+    public Role execute(Role role) {
+        Role existRole = roleRepository.findByName(role.getName());
+
+        if (existRole != null) {
+            throw new Error("Permissão já existe.");
+        }
+
+        return roleRepository.save(role);
     }
 }

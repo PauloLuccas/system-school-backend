@@ -11,26 +11,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.school.modules.user.model.Role;
-import com.school.modules.user.services.CreateRoleService;
-import com.school.modules.user.services.ListRoleService;
+import com.school.modules.user.services.RoleService;
 
 @RestController
 @RequestMapping("/api/roles")
 public class RoleController {
     
     @Autowired
-    CreateRoleService createRoleService;
-
-    @Autowired
-    ListRoleService listRoleService;
+    RoleService roleService;
 
     @GetMapping
     public @ResponseBody List<Role> list() {
-        return listRoleService.listAll();
+        return roleService.listAll();
     }
 
     @PostMapping("/create")
     public Role create(@RequestBody Role role) {
-        return createRoleService.execute(role);
+        return roleService.execute(role);
     }
 }
