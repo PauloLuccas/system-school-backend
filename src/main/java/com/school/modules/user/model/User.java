@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.annotations.Any;
 
@@ -29,9 +30,11 @@ public class User {
     @GeneratedValue
     private UUID id;
 
+    @NotEmpty(message = "O campo Nome é obrigatório!")
     private String name;
 
-    @Column(unique = true, nullable = true)
+    @Column(unique = true)
+    @NotEmpty(message = "O campo CPF é obrigatório!")
     private Long cpf;
 
     private Long enrollment;
@@ -40,17 +43,19 @@ public class User {
 
     private Long classes;
 
-    @Column(nullable = true)
+    @NotEmpty(message = "O campo E-mail é obrigatório!")
     private String email;
 
-    @Column(nullable = true)
+    @NotEmpty(message = "O campo Password é obrigatório!")
     private String password;
 
+    @NotEmpty(message = "O campo Permissão é obrigatório!")
     private String role;
 
     private String classe;
 
     @Column(name = "org_id")
+    @NotEmpty(message = "O campo Organização é obrigatório!")
     private Long orgId;
 
     @OneToMany

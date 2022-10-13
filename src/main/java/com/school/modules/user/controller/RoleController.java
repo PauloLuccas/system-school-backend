@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.school.modules.user.dto.UserRoleDTO;
 import com.school.modules.user.model.Role;
+import com.school.modules.user.model.User;
 import com.school.modules.user.services.RoleService;
 
 @RestController
@@ -26,7 +28,12 @@ public class RoleController {
     }
 
     @PostMapping("/create")
-    public Role create(@RequestBody Role role) {
-        return roleService.execute(role);
+    public User create(@RequestBody UserRoleDTO userRoleDTO) {
+        return roleService.execute(userRoleDTO);
     }
+
+    // @PostMapping("/create")
+    // public Role create(@RequestBody Role role) {
+    //     return roleService.execute(role);
+    // }
 }
