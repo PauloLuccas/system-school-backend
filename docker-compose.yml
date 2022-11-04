@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'system-school'
+      # Você pode usar a senha que quiser
+      MYSQL_PASSWORD: 123456
+      # Senha para acesso root
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      # <Porta exposta> : < Porta MySQL rodando dentro do container>
+      - '3306:3306'
+    expose:
+      # Abre a porta 3306 no container 
+      - '3306'
+       # Onde nossos dados serão 
+    volumes:
+      - my-db:/var/lib/mysql
+# Nomeia nossos
+volumes:
+  my-db:
